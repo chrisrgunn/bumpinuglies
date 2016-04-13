@@ -2,32 +2,35 @@
 
 <h1>Listing Messagings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Receiver</th>
-      <th>Sender</th>
-      <th>Message</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Receiver</th>
+          <th>Sender</th>
+          <th>Message</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @messagings.each do |messaging| %>
-      <tr>
-        <td><%= messaging.date %></td>
-        <td><%= messaging.receiver %></td>
-        <td><%= messaging.sender %></td>
-        <td><%= messaging.message %></td>
-        <td><%= link_to 'Show', messaging %></td>
-        <td><%= link_to 'Edit', edit_messaging_path(messaging) %></td>
-        <td><%= link_to 'Destroy', messaging, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+      <tbody>
+        <% @messagings.each do |messaging| %>
+          <tr>
+            <td><%= messaging.date.strftime("%Y/%m/%d") %></td>
+            <td><%= messaging.receiver %></td>
+            <td><%= messaging.sender %></td>
+            <td><%= messaging.message %></td>
+            <td><%= link_to 'Show', messaging, class: 'btn-mini btn' %></td>
+            <td><%= link_to 'Edit', edit_messaging_path(messaging), class: 'btn-mini btn-success' %></td>
+            <td><%= link_to 'Destroy', messaging, method: :delete, class: 'btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 <br>
 
 <%= link_to 'New Messaging', new_messaging_path %>
