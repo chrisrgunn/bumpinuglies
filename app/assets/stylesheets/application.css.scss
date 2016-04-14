@@ -6,9 +6,23 @@ body
   background: url('/assets/nerd-couple.jpg');
   background-size: 1440px 800px;
   background-repeat:no-repeat;
+  background-attachment: fixed;
   display: compact;
-  font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 18px/36px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight:bold;
 }
+
+#div
+{
+  font:18px;
+  font-weight:bold;
+}
+
+p
+{
+  font:24px;
+}
+
 
 h3
 {
