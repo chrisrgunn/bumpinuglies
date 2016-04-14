@@ -1,5 +1,56 @@
 @import "bootstrap";
 
+body
+{
+  margin: 0;
+  background: url('/assets/nerd-couple.jpg');
+  background-size: 1440px 800px;
+  background-repeat:no-repeat;
+  display: compact;
+  font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h3
+{
+  font-size: 64px;
+  padding: 20px 20px 20px 0px;
+}
+
+#aside
+{
+  font-family:Verdana;
+  font-size:24px;
+  margin:20px 0px 0px 0px;
+}
+
+
+#main
+{
+  	padding:25px;
+		margin:10px 50px 20px 0px;
+		float:right;
+		width:60%;
+		height:250px;
+		font-family:Verdana;
+		color:#000000;
+		font-size:14px;
+		line-height: 22px;
+}
+
+#sidebar
+{
+  	margin:px 0px 20px 50px;
+		float:left;
+		padding:25px;
+		width:20%;
+		height:250px;
+		font-family:Verdana;
+		color:#000000;
+		font-size:14px;
+		line-height:22px;
+		text-align:center;
+}
+
 
 
 /*
@@ -16,4 +67,5 @@
  *
  *= require_tree .
  *= require_self
- */
+*/
+
