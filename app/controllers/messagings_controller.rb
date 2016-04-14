@@ -4,7 +4,8 @@ class MessagingsController < ApplicationController
   # GET /messagings
   # GET /messagings.json
   def index
-    @messagings = Messaging.all
+    @search = MessagingSearch.new(params[:search])
+    @messagings = @search.scope
   end
 
   # GET /messagings/1

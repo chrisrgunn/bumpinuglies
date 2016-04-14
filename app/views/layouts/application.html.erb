@@ -11,15 +11,47 @@
   <div class="container">
     <ul class="nav nav-tabs">
      <li><%= link_to "Home",root_path %></li>
-     <li><%= link_to "Login",welcome_login_path %></li>
-     <li><%= link_to "Sign Up",welcome_signup_path %></li>
+
+      <% if current_user %>
+        <li><%= link_to "Sign Out",destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Sign Up",new_user_registration_path %></li>
+        <li><%= link_to "Log In",new_user_session_path %></li>
+      <% end %>
+
+
      <li><%= link_to "About Us",welcome_about_path %></li>
      <li><%= link_to "Features",welcome_features_path %></li>
      <li><%= link_to "Users",welcome_users_path %></li>
-     <li><%= link_to "Profile",welcome_profile_path %></li>
+
+
+      <% if current_user %>
+        <li><%= link_to "Profile",welcome_profile_path %></li>
+      <% else %>
+        <li><%= link_to "Profile",new_user_session_path %></li>
+      <% end %>
+
+
      <li><%= link_to "Messages",messagings_path %></li>
      <li><%= link_to "Events",welcome_events_path %></li>
     </ul>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:notice] %>
+       </div>
+    <% elsif flash[:error] %>
+       <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:error] %>
+       </div>
+    <% elsif flash[:alert] %>
+       <div class="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:alert] %>
+       </div>
+    <% end %>
 
 
 <%= yield %>
