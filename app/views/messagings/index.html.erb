@@ -29,7 +29,7 @@
             <td><%= messaging.date.strftime("%Y/%m/%d") %></td>
             <td><%= messaging.receiver %></td>
             <td><%= messaging.sender %></td>
-            <td><%= image_tag messaging.image.url(:thumb) %></td>
+            <td><%= image_tag messaging.image.url(:medium) %></td>
             <td><%= messaging.message %></td>
             <td><%= link_to 'Show', messaging, class: 'btn-mini btn' %></td>
             <td><%= link_to 'Edit', edit_messaging_path(messaging), class: 'btn-mini btn-success' %></td>
