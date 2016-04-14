@@ -10,8 +10,9 @@
 
   <div class="container">
     <ul class="nav nav-tabs">
-     <li><%= link_to "Home",root_path %></li>
 
+              <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb), unless: current_user.avatar.nil?) %></li>
+      <li><%= link_to "Home",root_path %></li>
       <% if current_user %>
         <li><%= link_to "Sign Out",destroy_user_session_path, method: :delete %></li>
       <% else %>
