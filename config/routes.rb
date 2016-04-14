@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'welcome/profile'
 
+  get 'welcome/inbox'
+
   get 'welcome/messages'
 
   get 'welcome/events'

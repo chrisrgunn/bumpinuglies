@@ -24,6 +24,9 @@ class WelcomeController < ApplicationController
   def messages
   end
 
+  def inbox
+  end
+
   def events
   end
 end

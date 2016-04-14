@@ -29,9 +29,11 @@
 
       <% if current_user %>
         <li><%= link_to "Edit Profile",edit_user_registration_path %></li>
+        <li><%= link_to "Inbox", welcome_inbox_path %>
       <% else %>
         <li><%= link_to "Profile",new_user_session_path %></li>
       <% end %>
+
 
 
      <li><%= link_to "Messages",messagings_path %></li>

@@ -1,6 +1,6 @@
 <div class="row">
 <p id="notice"><%= notice %></p>
-  <h1>Listing Messagings</h1>
+  <h1>Public Messages</h1>
   <div class="pull-right range-query">
     <%= form_tag messagings_path, method: :get do %>
       <%= text_field_tag 'search[date_from]',@search.date_from %>
