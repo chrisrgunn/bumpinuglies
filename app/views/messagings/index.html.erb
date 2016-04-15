@@ -27,7 +27,6 @@
         <% @messagings.each do |messaging| %>
           <tr>
             <td><%= messaging.date.strftime("%Y/%m/%d") %></td>
-            <td><%= messaging.receiver %></td>
             <td><%= messaging.sender %></td>
             <td><%= image_tag messaging.image.url(:medium) %></td>
             <td><%= messaging.message %></td>
