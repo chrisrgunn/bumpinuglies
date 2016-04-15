@@ -25,10 +25,8 @@ class MessagingsController < ApplicationController
   # POST /messagings
   # POST /messagings.json
   def create
-    @messaging = Messaging.new(messaging_params)
-    @messaging.user = current_user
-    @messaging.cache_images
-
+  @messaging = Messaging.new(messaging_params)
+  @messaging.cache_images
 
     respond_to do |format|
       if @messaging.save
@@ -44,10 +42,6 @@ class MessagingsController < ApplicationController
   # PATCH/PUT /messagings/1
   # PATCH/PUT /messagings/1.json
   def update
-    @messaging = current_user.messaging
-    @messaging.assign_attributes(messaging_params)
-    @messaging.cache_images
-
 
     respond_to do |format|
       if @messaging.update(messaging_params)
