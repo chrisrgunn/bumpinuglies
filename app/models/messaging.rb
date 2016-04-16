@@ -2,8 +2,7 @@ class Messaging < ActiveRecord::Base
 
     attr_accessor :image_cache
   has_attached_file :image, styles: { medium: "300x300>", large: "600x600>" }, default_url: "/images/:style/missing.png"
-   validates_attachment :image,
-   :content_type => { :content_type => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] }
+ validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   def cache_images
     if image.staged?
