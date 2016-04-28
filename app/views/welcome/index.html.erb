@@ -8,16 +8,33 @@
     {
       font-size: 72px;
     }
+  span.red
+  {
+    color:red;
+    font-size:30px;
+  }
+  span.n
+  {
+    font-size:24px;
+  }
 
 </style>
 
 
 <script type='text/javascript'>
-    $(document).ready(function() {
-         $('.carousel').carousel({
-             interval: 3000
-         })
+$(function () {
+    $('#myCarousel').carousel({
+        interval: 3000
     });
+    $('#myCarousel').on('slid.bs.carousel', function (e) {
+        if ($('.carousel-inner .item:last').hasClass('active')) {
+            $('#myCarousel').carousel('pause');
+        }
+        if ($('.carousel-inner .item:first').hasClass('active')) {
+            $('#myCarousel').carousel('cycle');
+        }
+    });
+});
 
 
 
@@ -25,9 +42,9 @@
 </script>
 <br>
 <br>
-<br>
   <title>Bumpin' Uglies</title>
-<p class="big"><strong>Bumpin' Uglies</strong></p>
+<p class="big"><strong>Bumpin' Uglies</strong></p><br><br><br>
+<span class="n">Get  </span><span class="red"><i>bump'd</i></span><span class="n"> at Bumpin' Uglies</span><br>
 <br>
 <br>
 <br>
@@ -37,7 +54,7 @@
                         <div id="myCarousel"
                         class="carousel slide" style="width: 900px;   margin: 0 auto" data-wrap="false">
                         <!-- Carousel items -->
-                        <div class="carousel-inner" data-ride="carousel" data-interval='3000'>
+                        <div class="carousel-inner" data-ride="carousel" data-interval='3000' data-wrap="false">
                                 <div class="active item">
                                   <a href="/users/sign_up"><img src="/assets/this.png"></a>
                                 </div>
