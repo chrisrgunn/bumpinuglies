@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :events
+  devise_for :users
+
   get 'welcome/index'
 
   get 'welcome/login'
@@ -12,6 +15,8 @@ Rails.application.routes.draw do
   get 'welcome/users'
 
   get 'welcome/profile'
+
+  get 'welcome/inbox'
 
   get 'welcome/messages'
 

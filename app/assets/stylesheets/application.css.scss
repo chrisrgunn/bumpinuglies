@@ -1,0 +1,105 @@
+@import "bootstrap";
+
+body
+{
+  margin: 0;
+  background: url('/assets/nerd-lovers.jpg');
+  background-size: 1840px 1200px;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  display: compact;
+  font: 14px/14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight:bold;
+}
+
+#div
+{
+  font:18px;
+  font-weight:bold;
+}
+
+p
+{
+  font:24px;
+}
+
+
+h3
+{
+  font-size: 64px;
+  padding: 20px 20px 20px 0px;
+}
+
+h4
+{
+
+  font-size: 64px;
+    background-color: white;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+#aside
+{
+  font-family:Verdana;
+  font-size:24px;
+  margin:20px 0px 0px 0px;
+}
+
+
+#main
+{
+  	padding:25px;
+		margin:10px 50px 20px 0px;
+		float:right;
+		width:60%;
+		height:250px;
+		font-family:Verdana;
+		color:#000000;
+		font-size:14px;
+		line-height: 22px;
+}
+
+#sidebar
+{
+  	margin:px 0px 20px 50px;
+		float:left;
+		padding:25px;
+		width:20%;
+		height:250px;
+		font-family:Verdana;
+		color:#000000;
+		font-size:14px;
+		line-height:22px;
+		text-align:center;
+}
+
+.round-image-50 {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+*/
+

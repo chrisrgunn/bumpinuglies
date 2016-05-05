@@ -4,7 +4,8 @@ class MessagingsController < ApplicationController
   # GET /messagings
   # GET /messagings.json
   def index
-    @messagings = Messaging.all
+    @search = MessagingSearch.new(params[:search])
+    @messagings = @search.scope
   end
 
   # GET /messagings/1
@@ -24,7 +25,8 @@ class MessagingsController < ApplicationController
   # POST /messagings
   # POST /messagings.json
   def create
-    @messaging = Messaging.new(messaging_params)
+  @messaging = Messaging.new(messaging_params)
+  @messaging.cache_images
 
     respond_to do |format|
       if @messaging.save
@@ -40,6 +42,7 @@ class MessagingsController < ApplicationController
   # PATCH/PUT /messagings/1
   # PATCH/PUT /messagings/1.json
   def update
+
     respond_to do |format|
       if @messaging.update(messaging_params)
         format.html { redirect_to @messaging, notice: 'Messaging was successfully updated.' }
@@ -69,6 +72,6 @@ class MessagingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def messaging_params
-      params.require(:messaging).permit(:date, :receiver, :sender, :message)
+      params.require(:messaging).permit(:date, :receiver, :sender, :message, :image)
     end
 end

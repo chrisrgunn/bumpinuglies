@@ -1,2 +1,87 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+
+<style>
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 100%;
+}
+
+             p.big
+    {
+      font-size: 72px;
+    }
+  span.red
+  {
+    color:red;
+    font-size:30px;
+  }
+  span.n
+  {
+    font-size:24px;
+  }
+  .right.carousel-control, .left.carousel-control {
+    display: none;
+}
+
+  .carousel {
+    background: none repeat scroll 0 0 red;
+    margin-top: 20px;
+    padding: 1%;
+}
+
+</style>
+
+
+<script type='text/javascript'>
+$(function () {
+    $('#myCarousel').carousel({
+        interval: 3000
+    });
+    $('#myCarousel').on('slid.bs.carousel', function (e) {
+        if ($('.carousel-inner .item:last').hasClass('active')) {
+            $('#myCarousel').carousel('pause');
+        }
+        if ($('.carousel-inner .item:first').hasClass('active')) {
+            $('#myCarousel').carousel('cycle');
+        }
+    });
+});
+
+
+
+
+</script>
+<br>
+<br>
+  <title>Bumpin' Uglies</title>
+<p class="big"><strong>Bumpin' Uglies</strong></p><br><br><br>
+<span class="n">Get  </span><span class="red"><i>bump'd</i></span><span class="n"> at Bumpin' Uglies</span><br>
+<br>
+<br>
+<br>
+<div class="span8 welcome-image">
+
+
+                        <div id="myCarousel"
+                        class="carousel slide" style="width: 600px;   margin: 0 auto" data-wrap="false">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner" data-ride="carousel" data-interval='3000' data-wrap="false">
+                                <div class="active item">
+                                  <a href="/users/sign_up"><img src="/assets/this.png"></a>
+                                </div>
+                                <div class="item">
+                                        <a href="/users/sign_up"><img src="/assets/nerd.jpg"> </a>
+                                </div>
+                                <div class="item">
+                                        <a href="/users/sign_up"><img src="/assets/could.png"> </a>
+                                </div>
+                                <div class="item">
+                                        <a href="/users/sign_up"><img src="/assets/nerd-couple.jpg"> </a>
+                                </div>
+                                <div class="item">
+
+                                </div>
+                        </div>
+                        <!-- Carousel nav -->
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+       </div>
+  <br><br><br><br>

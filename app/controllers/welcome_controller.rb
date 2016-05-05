@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
+    @user=current_user
   end
 
   def login
@@ -21,6 +22,9 @@ class WelcomeController < ApplicationController
   end
 
   def messages
+  end
+
+  def inbox
   end
 
   def events
