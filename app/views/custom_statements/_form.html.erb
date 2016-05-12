@@ -1,0 +1,88 @@
+<style>
+  p.big
+  {
+    font-weight:bold;
+    font-size:24px;
+  }
+  #main-container
+  {
+    margin:0 auto;
+    width: 90%;
+  }
+  #whitebackground
+  {
+    background-color: white;
+    box-shadow: 4px 4px 4px rbga(50,50,50, 0.75);
+    width: 700px;
+    margin-top:18px;
+  }
+</style>
+
+
+
+
+<%= form_for [@custom_statement.user, @custom_statement] do |f| %>
+
+    <% if @custom_statement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@custom_statement.errors.count, "error") %> prohibited this custom statement from being saved:</h2>
+
+      <ul>
+      <% @custom_statement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br>
+<div id = "main-container" align = "center">
+<section id = "whitebackground">
+    <div class='field'>
+     <br><br> <p class="big">Statement:</p><br><br>
+      <%= f.text_field :statement %>
+    </div>
+
+    <div class='field'>
+      <br><br>
+      <p class="big">Importance</p><br><br>
+      <%= f.label :importance, "0 - Not important at all in a match", :value => 0 %>
+      <%= f.radio_button :importance, 0 %>
+      <%= f.label :importance, "1 - Rarely important in a match", :value => 1 %>
+      <%= f.radio_button :importance, 1 %>
+      <%= f.label :importance, "2 - Sometimes important in a match", :value => 2 %>
+      <%= f.radio_button :importance, 2 %>
+      <%= f.label :importance, "3 - Normally important in a match", :value => 3 %>
+      <%= f.radio_button :importance, 3 %>
+      <%= f.label :importance, "4 - Almost always important in a match", :value => 4 %>
+      <%= f.radio_button :importance, 4 %>
+      <%= f.label :importance, "5 - Incredibly important in a match", :value => 5 %>
+      <%= f.radio_button :importance, 5 %>
+    </div>
+
+    <div class='field'>
+      <br><br><p class="big">Degree of Truth:</p><br><br>
+      <%= f.label :degree_of_truth, "0 - Not true at all for me", :value => 0 %>
+      <%= f.radio_button :degree_of_truth, 0 %>
+      <%= f.label :degree_of_truth, "1 - Rarely true for me", :value => 1 %>
+      <%= f.radio_button :degree_of_truth, 1 %>
+      <%= f.label :degree_of_truth, "2 - Sometimes true for me", :value => 2 %>
+      <%= f.radio_button :degree_of_truth, 2 %>
+      <%= f.label :degree_of_truth, "3 - Normally true for me", :value => 3 %>
+      <%= f.radio_button :degree_of_truth, 3 %>
+      <%= f.label :degree_of_truth, "4 - Almost always true for me", :value => 4 %>
+      <%= f.radio_button :degree_of_truth, 4 %>
+      <%= f.label :degree_of_truth, "5 - Incredibly true for me", :value => 5 %>
+      <%= f.radio_button :degree_of_truth, 5 %>
+      <br><br><br>
+    </div>
+
+  </section>
+</div>
+<br><br>
+<div id = "main-container" align = "center">
+
+    <div class='actions'>
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

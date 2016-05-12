@@ -1,0 +1,56 @@
+<style>
+  p.red
+  {
+    color:red;
+    font-size:16px;
+  }
+  #main-container
+  {
+    margin:0 auto;
+    width: 90%;
+  }
+  #whitebackground
+  {
+    background-color: white;
+    box-shadow: 4px 4px 4px rbga(50,50,50, 0.75);
+    width: 700px;
+    margin-top:18px;
+  }
+</style>
+<h1>Your Custom Requirements</h1>
+<div id = "main-container" align = "center">
+<section id = "whitebackground">
+<table width = "65%" cellspacing = "5" cellpadding = "10">
+
+  <tr>
+    <th><p class = "red" align = "center"> Requirement </p></th>
+    <th><p class = "red" align = "center"> Importance  </p></th>
+    <th><p class = "red" align = "center"> Degree of Truth </p></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @custom_statements.each do |custom_statement| %>
+  <tr>
+    <td><p align = "center"><%= custom_statement.statement %></p></td>
+    <td><p align = "center"><%= custom_statement.importance %> / 5</p></td>
+    <td><p align = "center"><%= custom_statement.degree_of_truth %> / 5</p></td>
+
+    <!-- /posts/:post_id/comments/:id -->
+    <td><%= link_to 'Show', [custom_statement.user, custom_statement] %>   </td>
+    <!-- /posts/:post_id/comments/:id/edit -->
+    <td><%= link_to 'Edit', edit_user_custom_statement_path(custom_statement.user, custom_statement)%>   </td>
+    <!-- /posts/:post_id/comments/:id -->
+    <td><%= link_to 'Destroy', [custom_statement.user, custom_statement], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+  </section>
+</div>
+
+
+<br />
+
+<%= link_to 'New Custom Statement', new_user_custom_statement_path %>

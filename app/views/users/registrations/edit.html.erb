@@ -1,32 +1,58 @@
+<style>
+    p.big
+  {
+    font-weight:bold;
+    font-size:20px;
+  }
+  #main-container
+  {
+    margin:0 auto;
+    width: 90%;
+  }
+  #whitebackground
+  {
+    background-color: white;
+    box-shadow: 4px 4px 4px rbga(50,50,50, 0.75);
+    width: 800px;
+    margin-top:30px;
+    margin-left:30px;
+    margin-bottom:30px;
+    margin-right:30px;
+  }
+</style>
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+   <div id = "main-container" align = "center">
+    <section id = "whitebackground">
+      <br><br>
+      <h1><%= link_to 'My Custom Statements', user_custom_statements_path(@user) %></h1><br>
 
     <div class="form-group">
-        <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+      <%= f.label :avatar,"Avatar", style: 'font-size: 20px; font-weight: bold', class: 'col-sm-2 control-label'  %><br>
         <div class="col-sm-6">
             <%= f.file_field :avatar %>
         </div>
     </div>
 
-    <div class><%= f.label :name %><br />
+    <br><div class><%= f.label :name, "Name", style: 'font-size: 20px; font-weight: bold' %><br />
         <%= f.text_field :name, autofocus: true %></div>
 
     <div><%= f.check_box :is_female, {}, true %> <%= f.label :is_female, "Female" %> </div>
     <div><%= f.check_box :is_female, {}, false %> <%= f.label :is_female, "Male" %> </div>
-
-    <div><%= f.label :date_of_birth %><br />
+  <br>
+    <div><%= f.label :date_of_birth, "Date of Birth",style: 'font-size: 20px; font-weight: bold' %><br />
         <%= f.date_select :date_of_birth %></div>
 
-    <div><%= f.label :age %><br />
+    <div><%= f.label :age,style: 'font-size: 20px; font-weight: bold'  %><br />
         <%= f.text_field :age %></div>
-
+      <br><p class="big">Preference</p><br>
     <div><%= f.check_box :serious_relationship, {}, true %> <%= f.label :serious_relationship, "Serious Relationship" %> </div>
     <div><%= f.check_box :dating, {}, false %> <%= f.label :dating, "Casual Dating" %> </div>
-    <div><%= f.check_box :friends, {}, false %> <%= f.label :friends, "Friends" %> </div>
-
-
+    <div><%= f.check_box :friends, {}, false %> <%= f.label :friends, "Just Friends" %> </div>
+  <br>
+ <br><p class="big">Change Email</p><br>
     <div><%= f.label :email %><br />
         <%= f.email_field :email %></div>
 
@@ -35,14 +61,14 @@
 
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, "Retype email"%><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
+ <br><p class="big">Change Password</p><br>
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
@@ -62,9 +88,12 @@
     <%= f.submit "Update" %>
   </div>
 <% end %>
+<br><br>
 
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
+      <br><br>
+     </section>
+</div>
 <%= link_to "Back", :back %>

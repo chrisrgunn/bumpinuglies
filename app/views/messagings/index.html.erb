@@ -1,3 +1,17 @@
+<style>
+  #main-container
+  {
+    margin:0 auto;
+    width: 90%;
+  }
+  #whitebackground
+  {
+    background-color: white;
+    box-shadow: 4px 4px 4px rbga(50,50,50, 0.75);
+    width: 700px;
+    margin-top:18px;
+  }
+</style>
 <div class="row">
 <p id="notice"><%= notice %></p>
   <h1>Public Messages</h1>
@@ -10,6 +24,8 @@
      <% end %>
   </div>
  </div>
+<div id = "main-container">
+  <section id = "whitebackground">
 <div class="media">
   <div class="media-body">
     <table class="table table-hover">
@@ -39,6 +55,9 @@
     </table>
   </div>
 </div>
+  </section>
+</div>
 <br>
-
-<%= link_to 'New Messaging', new_messaging_path %>
+<br>
+<h1><%= link_to 'New Message', new_messaging_path %></h1>
+<br><br>

@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Statement:</b>
+  <%= @custom_statement.statement %>
+</p>
+
+<p>
+  <b>Importance:</b>
+  <%= @custom_statement.importance %>
+</p>
+
+<p>
+  <b>Degree of Truth:</b>
+  <%= @custom_statement.degree_of_truth %>
+</p>
+
+<!-- /posts/:post_id/comments/:id/edit -->
+<%= link_to 'Edit', edit_user_custom_statement_path(@custom_statement.user, @custom_statement) %> |
+<!-- /posts/:post_id/comments/ -->
+<%= link_to 'Back', user_custom_statements_path(@custom_statement.user) %>

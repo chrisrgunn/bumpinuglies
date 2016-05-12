@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   resources :events
   devise_for :users
 
+  resources :users do
+	  resources :custom_statements
+  end
+  
   get 'welcome/index'
 
   get 'welcome/login'

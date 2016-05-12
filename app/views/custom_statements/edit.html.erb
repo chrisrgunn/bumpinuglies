@@ -1,0 +1,8 @@
+<h1>Editing Custom Statement</h1>
+
+<%= render 'form' %>
+
+<!-- /posts/:post_id/comments/:id -->
+<%= link_to 'Show', [@custom_statement.user, @custom_statement] %> |
+<!-- /posts/:post_id/comments/ -->
+<%= link_to 'Back', user_custom_statements_path(@custom_statement.user) %>

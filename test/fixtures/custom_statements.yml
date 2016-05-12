@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  statement: MyString
+  importance: 1
+  degree_of_truth: 1
+  user_id: 
+
+two:
+  statement: MyString
+  importance: 1
+  degree_of_truth: 1
+  user_id: 
