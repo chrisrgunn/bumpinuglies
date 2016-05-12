@@ -28,6 +28,8 @@
     <section id = "whitebackground">
       <br><br>
       <h1><%= link_to 'My Custom Statements', user_custom_statements_path(@user) %></h1><br>
+      <!--temporary: for testing find match:-->
+      <p><%= link_to 'Find Matches', users_path(@user) %></p>
 
     <div class="form-group">
       <%= f.label :avatar,"Avatar", style: 'font-size: 20px; font-weight: bold', class: 'col-sm-2 control-label'  %><br>

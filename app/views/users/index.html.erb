@@ -1,0 +1,41 @@
+<h1>Listing Matches</h1>
+
+<table>
+  <tr>
+    <th>Name       </th>
+    <th>email      </th>
+    <th> Match Rate      </th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @found_matches = get_potential_matches(current_user) %>
+<% @found_matches.each do |found_match| %>
+  <tr>
+    <% if found_match == nil %>
+    <%= "found_match IS NIIL!!" %>
+    <% break %>
+    <% end %>
+
+    <% name = "[No name entered]" %>
+
+    <!--check if user name is null: -->
+    <% if found_match.user.name != nil %>
+      <% name = found_match.user.name %>
+    <% end %>
+
+    <td><%= name %></td>
+
+    <td><%= found_match.user.email %></td>
+
+    <td><%= number_with_precision(found_match.match_rate, :precision => 2) %> percent</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to "Back", :back %>
+
+

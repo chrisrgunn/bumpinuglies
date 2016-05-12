@@ -23,12 +23,14 @@
 
      <li><%= link_to "About Us",welcome_about_path %></li>
      <li><%= link_to "Features",welcome_features_path %></li>
-     <li><%= link_to "Users",welcome_users_path %></li>
+
+
+
+
 
 
       <% if current_user %>
         <li><%= link_to "Edit Profile",edit_user_registration_path %></li>
-        <li><%= link_to "Inbox", welcome_inbox_path %>
       <% else %>
         <li><%= link_to "Profile",new_user_session_path %></li>
       <% end %>
@@ -37,6 +39,8 @@
 
      <li><%= link_to "Messages",messagings_path %></li>
      <li><%= link_to "Events",events_path %></li>
+            <li><%= link_to "Find your match!", welcome_inbox_path %>
+
     </ul>
 
     <% if flash[:notice] %>
